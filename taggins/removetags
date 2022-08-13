@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+current=`taggins -f "$1"`
+
+clear
+printf "$current remove: "
+read -r tags
+
+if [ -n "$tags" ]; then
+  taggins -rf "$1" $tags
+  printf "Enter to continue"
+  read _
+fi
